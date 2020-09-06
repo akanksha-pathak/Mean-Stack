@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+
+    <title>Weather Report</title>
+    <style>
+        html,
+        body {
+            margin: 0px;
+            color: rgb(255, 251, 0);
+            background-image: url('w1.jpeg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .text-style {
+            font-family: 'Comfortaa', cursive;
+            font-size: 1.75rem;
+            color: rgb(255, 255, 255);
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- Navbar -->
+        <div class="row justify-content-center align-items-center bg-dark text-light" style="height : 8vh;">
+
+            <div class="text-style">Weather Report</div>
+
+
+        </div>
+        <!-- page content -->
+        <div class="row mt-5 justify-content-center">
+            <div class="col-12 col-md-6  ">
+                <div class="row d-flex  justify-content-center p-4">
+
+
+                    <input class="form-control mr-sm-2 mb-2" type="search" placeholder="city" aria-label="Search"
+                        id="search-box-city" required>
+                    <!-- <input class="form-control mr-sm-2 mb-3" type="search" placeholder="Country initials only 2 "
+                        aria-label="Search" id="search-box-country" pattern=".{2,2}" required> -->
+                    <button class="btn btn-primary my-2 my-sm-0" id="search-btn" onclick="showReport()">Search</button>
+
+                </div>
+            
+                <div class="row mt-2" id="postCont">
+                    <div class="col-12 p-5 " style="display : none; ">
+                        <div>
+                            <span class="text-style" id="cname">cname</span><span class="text-style"
+                                id="lon">lon</span><span class="text-style" id="lat">lat</span>
+                        </div>
+                        <hr>
+                        <div
+                            style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                            <span id="main" class="text-style">main</span><span id="desc" class="text-style">desc</span>
+
+                        </div>
+                        <hr>
+                        <div>
+                            <span id="tempavg" class="text-style">temp</span>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+<script src="weather.js"></script>
+
+</html>

@@ -1,0 +1,173 @@
+<!-- <div class="container-fluid bground ">
+  <div class="row r1"></div>
+  <div class="row r2">
+    <div class="col-4"></div>
+    <div class="col-12 col-md-4 column">
+      <div class="signInWith">
+        Sign In With
+      </div>
+
+      <div>
+
+        <div class="g-signin2" data-onsuccess="onSignIn" (click)="signInWithGoogle()"></div>
+
+      </div>
+      <form name="signupForm" class="needs-validation" #signUpForm="ngForm">
+        <div class="padding"><input [(ngModel)]="user.email" name="email" class="form-control" type="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required placeholder="Email " #email="ngModel">
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+            <div *ngIf="email.errors.required">
+              Email is required.
+            </div>
+            <div *ngIf="email.errors.pattern">
+              Please Enter valid Email Address
+            </div>
+          </div>
+
+        </div>
+        <div class="padding"><input [(ngModel)]="user.password" name="password" class="form-control" type="password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required minlength="8"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+            placeholder="Password" #password="ngModel">
+
+
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+            <div *ngIf="password.errors.required">
+              Password is required.
+            </div>
+            <div *ngIf="password.errors.pattern">
+              Please Enter valid password
+              Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more
+              characters"
+            </div>
+            <div *ngIf="password.errors.minlength">
+              Minmum length is 8
+            </div>
+
+          </div>
+
+
+
+
+        </div>
+
+        <div class="bdiv">
+          <button (click)="signin()" [disabled]="signUpForm.invalid" class="button">Sign In</button>
+
+        </div>
+        <br>
+
+        <div style="display: flex;justify-content:space-between">
+          <div class="fpassword" style="padding-left:20px; ">
+            <button type="button" (click)="forgetp()" class="btn btn-info"
+              style="padding-left:23px;padding-right:23px">Forget
+              Password</button>
+          </div>
+
+          <div class="fpassword" style="padding-right:20px">
+            <button type="button" (click)="register()" class="btn btn-info"
+              style="padding-left:34px;padding-right:34px">Register
+              Here </button>
+          </div>
+        </div>
+
+
+      </form>
+
+    </div>
+    <div class="col-4"></div>
+  </div>
+  <div class="row r3"></div>
+</div> -->
+
+<img src="{{ socialUser?.photoUrl }}" />
+<div>
+  <h4>{{ socialUser?.name }}</h4>
+  <p>{{ socialUser?.email }}</p>
+</div>
+
+<div class="container-fluid bground">
+  <div class="row r1"></div>
+  <div class="row r2">
+    <div class="col-4"></div>
+    <div class="col-12 col-md-4 column">
+      <div class="signInWith">Sign In With</div>
+      <div>
+        <div class="google">
+          <button (click)="signInWithGoogle()">Google</button>
+          <div id="fb-root">
+            <div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="default"
+              data-auto-logout-link="false" data-use-continue-as="false" data-width=""></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="userName">Email</div>
+        <div class="padding"><input [(ngModel)]="user.email" name="email" class="form-control" type="email"
+            pattern="[a-z]+[a-z0-9]+@[a-z.]+\.[a-z]{2,}$" required placeholder="Email " #email="ngModel">
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+            <div *ngIf="email.errors.required">
+              Email is required.
+            </div>
+            <div *ngIf="email.errors.pattern">
+              Please Enter valid Email Address
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div>
+        <div class="password">
+          <div>Password</div>
+        </div>
+        <div class="padding"><input [(ngModel)]="user.password" name="password" class="form-control" type="password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required minlength="8"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+            placeholder="Password" #password="ngModel">
+
+
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+            <div *ngIf="password.errors.required">
+              Password is required.
+            </div>
+            <div *ngIf="password.errors.pattern">
+              Please Enter valid password
+              Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more
+              characters"
+            </div>
+            <div *ngIf="password.errors.minlength">
+              Minmum length is 8
+            </div>
+
+          </div>
+
+
+
+
+        </div>
+      </div>
+      <div class="bdiv">
+        <button (click)="signin()" class="button">Sign In</button>
+      </div>
+      <br />
+
+      <div style="display: flex; justify-content: space-between">
+        <div class="fpassword" style="padding-left: 20px">
+          <button type="button" (click)="forgetp()" class="btn btn-info"
+            style="padding-left: 23px; padding-right: 23px">
+            Forget Password
+          </button>
+        </div>
+
+        <div class="fpassword" style="padding-right: 20px">
+          <button type="button" (click)="register()" class="btn btn-info"
+            style="padding-left: 34px; padding-right: 34px">
+            Register Here
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-4"></div>
+  </div>
+  <div class="row r3"></div>
+</div>
